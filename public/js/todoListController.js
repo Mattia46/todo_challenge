@@ -1,13 +1,19 @@
-todoList.controller('todoAppController', [function($scope) {
-  'hello world'
-}]);
+todoList.controller('todoAppController', [function() {
 
-//githubUserSearch.controller('GitUserSearchController', ['Search', function(Search) {
-  //var self = this;
-  //self.doSearch = function() {
-    //Search.query(self.searchTerm)
-    //.then(function(response) {
-      //self.searchResult = response.data;
-    //});
-  //};
-//}]);
+  var self = this;
+
+  self.todos = [
+    {text: 'ciao', done: false},
+    {text: 'Hello', done: false}
+    ];
+
+    self.getTotalTodos = function(){
+      return self.todos.legth;
+    };
+
+    self.addTodo = function() {
+      self.todos.push({text: self.formTodoText, done: false});
+      self.formTodoText = '';
+    };
+
+  }]);
